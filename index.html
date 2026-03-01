@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomeShip - Future of Logistics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="text-slate-300">
+    <!-- Header & Navigation -->
+    <header id="header" class="glass-nav fixed w-full top-0 z-50">
+      <nav
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a href="#" class="text-2xl font-bold text-white flex items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8 mr-2 text-sky-400"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M13 10V3L4 14h7v7l9-11h-7z"
+            />
+          </svg>
+          HomeShip
+        </a>
+        <div class="hidden md:flex space-x-8 items-center">
+          <a
+            href="#home"
+            class="text-slate-300 hover:text-white transition duration-300"
+            >Home</a
+          >
+          <a
+            href="#services"
+            class="text-slate-300 hover:text-white transition duration-300"
+            >Services</a
+          >
+          <a
+            href="#process"
+            class="text-slate-300 hover:text-white transition duration-300"
+            >Process</a
+          >
+          <a
+            href="#about"
+            class="text-slate-300 hover:text-white transition duration-300"
+            >About</a
+          >
+          <a
+            href="#contact"
+            class="text-slate-300 hover:text-white transition duration-300"
+            >Contact</a
+          >
+        </div>
+        <a
+          href="html/quote.html"
+          class="hidden md:block border border-slate-600 text-white px-5 py-2 rounded-full hover:bg-slate-800 transition duration-300"
+          >Get a Quote</a
+        >
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-button" class="md:hidden">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            />
+          </svg>
+        </button>
+      </nav>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden">
+        <a href="#home" class="block py-3 px-6 text-sm hover:bg-slate-800"
+          >Home</a
+        >
+        <a href="#services" class="block py-3 px-6 text-sm hover:bg-slate-800"
+          >Services</a
+        >
+        <a href="#process" class="block py-3 px-6 text-sm hover:bg-slate-800"
+          >Process</a
+        >
+        <a href="#about" class="block py-3 px-6 text-sm hover:bg-slate-800"
+          >About</a
+        >
+        <a href="#contact" class="block py-3 px-6 text-sm hover:bg-slate-800"
+          >Contact</a
+        >
+        <div class="px-6 py-4">
+            <a
+            href="html/quote.html"
+            class="w-full text-center block gradient-button text-white px-5 py-2 rounded-full"
+            >Get a Quote</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section
+        id="home"
+        class="hero-bg-modern min-h-screen flex items-center pt-24 pb-12"
+      >
+        <div class="container mx-auto px-6 text-center reveal">
+          <h1
+            class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4"
+          >
+            Experience the <span class="gradient-text">Future</span> of
+            Logistics
+          </h1>
+          <p class="text-lg md:text-xl mb-10 text-slate-400 max-w-3xl mx-auto">
+            HomeShip delivers your world, faster and smarter than ever before.
+            Real-time tracking, unparalleled reliability.
+          </p>
+          <div class="max-w-2xl mx-auto">
+            <form
+              class="flex flex-col md:flex-row items-center gap-2"
+              id="track-form-hero"
+            >
+              <input
+                id="tracking-input-hero"
+                type="text"
+                placeholder="Enter your tracking ID"
+                class="tracking-input-modern w-full flex-1 py-3 px-6 bg-slate-800 border border-slate-700 text-white rounded-full outline-none transition duration-300"
+              />
+              <button
+                type="submit"
+                class="w-full md:w-auto gradient-button text-white font-semibold py-3 px-8 rounded-full"
+              >
+                Track Parcel
+              </button>
+            </form>
+            <p id="tracking-status-hero" class="mt-4 text-sm min-h-[20px]"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services" class="py-20">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-16 reveal">
+            <h2 class="text-3xl md:text-4xl font-bold text-white">
+              A Solution for Every Shipping Need
+            </h2>
+            <p class="text-slate-400 mt-4 max-w-2xl mx-auto">
+              From urgent documents to global freight, we provide tailored
+              services designed for performance and reliability.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Service Card 1 -->
+            <div class="service-card p-8 rounded-xl reveal">
+              <div class="service-card-inner">
+                <div
+                  class="icon-background bg-blue-900/50 text-sky-400 w-16 h-16 rounded-full flex items-center justify-center mb-6"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">
+                  Express Delivery
+                </h3>
+                <p class="text-slate-400">
+                  Time-sensitive parcels delivered with urgency and precision,
+                  locally and nationwide.
+                </p>
+              </div>
+            </div>
+            <!-- Service Card 2 -->
+            <div
+              class="service-card p-8 rounded-xl reveal"
+              style="transition-delay: 150ms"
+            >
+              <div class="service-card-inner">
+                <div
+                  class="icon-background bg-purple-900/50 text-violet-400 w-16 h-16 rounded-full flex items-center justify-center mb-6"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                    <path d="M2 12h20" />
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">
+                  Global Logistics
+                </h3>
+                <p class="text-slate-400">
+                  Seamless international shipping with customs clearance and
+                  end-to-end tracking.
+                </p>
+              </div>
+            </div>
+            <!-- Service Card 3 -->
+            <div
+              class="service-card p-8 rounded-xl reveal"
+              style="transition-delay: 300ms"
+            >
+              <div class="service-card-inner">
+                <div
+                  class="icon-background bg-emerald-900/50 text-emerald-400 w-16 h-16 rounded-full flex items-center justify-center mb-6"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z" />
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">
+                  E-commerce Solutions
+                </h3>
+                <p class="text-slate-400">
+                  Integrated warehousing, fulfillment, and last-mile delivery
+                  for online businesses.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works Section -->
+      <section id="process" class="py-20">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-16 reveal">
+            <h2 class="text-3xl md:text-4xl font-bold text-white">
+              Our Streamlined Process
+            </h2>
+            <p class="text-slate-400 mt-4 max-w-2xl mx-auto">
+              We've simplified logistics. Follow these three easy steps to send
+              your parcel.
+            </p>
+          </div>
+          <div class="max-w-2xl mx-auto">
+            <!-- Step 1 -->
+            <div class="timeline-item relative pb-12 reveal">
+              <div class="absolute left-0 top-0">
+                <div
+                  class="w-10 h-10 rounded-full bg-slate-800 border-2 border-slate-700 flex items-center justify-center"
+                >
+                  <span class="font-bold text-sky-400">1</span>
+                </div>
+              </div>
+              <div class="ml-16">
+                <h3 class="text-xl font-bold text-white mb-2">
+                  Schedule Pickup
+                </h3>
+                <p class="text-slate-400">
+                  Book your shipment online in minutes. Tell us where to be, and
+                  we'll be there.
+                </p>
+              </div>
+            </div>
+            <!-- Step 2 -->
+            <div class="timeline-item relative pb-12 reveal">
+              <div class="absolute left-0 top-0">
+                <div
+                  class="w-10 h-10 rounded-full bg-slate-800 border-2 border-slate-700 flex items-center justify-center"
+                >
+                  <span class="font-bold text-sky-400">2</span>
+                </div>
+              </div>
+              <div class="ml-16">
+                <h3 class="text-xl font-bold text-white mb-2">
+                  We Handle the Rest
+                </h3>
+                <p class="text-slate-400">
+                  Our expert team carefully handles, sorts, and dispatches your
+                  package for transit.
+                </p>
+              </div>
+            </div>
+            <!-- Step 3 -->
+            <div class="timeline-item relative pb-4 reveal">
+              <div class="absolute left-0 top-0">
+                <div
+                  class="w-10 h-10 rounded-full bg-slate-800 border-2 border-slate-700 flex items-center justify-center"
+                >
+                  <span class="font-bold text-sky-400">3</span>
+                </div>
+              </div>
+              <div class="ml-16">
+                <h3 class="text-xl font-bold text-white mb-2">
+                  Real-time Tracking & Delivery
+                </h3>
+                <p class="text-slate-400">
+                  Monitor your shipment's journey and receive confirmation upon
+                  its safe arrival.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Us Section -->
+      <section id="about" class="py-20 bg-slate-900">
+        <div class="container mx-auto px-6">
+          <div class="flex flex-col lg:flex-row items-center gap-12">
+            <div class="lg:w-1/2 reveal">
+              <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                Powered by Technology, Driven by People
+              </h2>
+              <p class="text-slate-400 mb-6">
+                HomeShip is revolutionizing the courier industry by blending
+                state-of-the-art technology with a customer-first approach. Our
+                advanced routing algorithms, real-time tracking systems, and
+                dedicated support team work in harmony to provide an exceptional
+                delivery experience.
+              </p>
+              <div class="grid grid-cols-2 gap-6">
+                <div class="flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span class="font-semibold">99.8% On-Time Delivery</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                    <path d="M2 12h20" />
+                  </svg>
+                  <span class="font-semibold">150+ Countries Served</span>
+                </div>
+              </div>
+            </div>
+            <div class="lg:w-1/2 w-full reveal">
+              <div
+                class="bg-slate-800 border border-slate-700 rounded-2xl p-8 space-y-6 h-full flex flex-col justify-center"
+              >
+                <!-- Feature 1 -->
+                <div class="flex items-start gap-4">
+                  <div class="bg-sky-900/50 text-sky-400 p-3 rounded-full">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-white text-lg">
+                      Real-Time Tracking
+                    </h4>
+                    <p class="text-slate-400 text-sm">
+                      Monitor your shipment's progress from pickup to delivery
+                      with live updates.
+                    </p>
+                  </div>
+                </div>
+                <!-- Feature 2 -->
+                <div class="flex items-start gap-4">
+                  <div
+                    class="bg-violet-900/50 text-violet-400 p-3 rounded-full"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                      <path d="M2 12h20" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-white text-lg">Global Reach</h4>
+                    <p class="text-slate-400 text-sm">
+                      Leverage our extensive network for reliable international
+                      shipping solutions.
+                    </p>
+                  </div>
+                </div>
+                <!-- Feature 3 -->
+                <div class="flex items-start gap-4">
+                  <div
+                    class="bg-emerald-900/50 text-emerald-400 p-3 rounded-full"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-white text-lg">
+                      Secure & Reliable
+                    </h4>
+                    <p class="text-slate-400 text-sm">
+                      Your parcels are handled with the utmost care and security
+                      at every step.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-slate-950 border-t border-slate-800">
+      <div class="container mx-auto px-6 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <!-- About -->
+          <div class="col-span-1 md:col-span-2">
+            <h3 class="text-xl font-bold text-white mb-4">HomeShip</h3>
+            <p class="text-slate-400 max-w-md">
+              Innovating logistics for a connected world. Your trusted partner
+              for every delivery.
+            </p>
+          </div>
+          <!-- Quick Links -->
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-4">Company</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="html/about.html"
+                  class="text-slate-400 hover:text-white transition duration-300"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="html/careers.html"
+                  class="text-slate-400 hover:text-white transition duration-300"
+                  >Careers</a
+                >
+              </li>
+              <li>
+                <a
+                  href="html/press.html"
+                  class="text-slate-400 hover:text-white transition duration-300"
+                  >Press</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Contact -->
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-4">Contact</h3>
+            <ul class="space-y-2 text-slate-400">
+              <li>homeship@swiftship.com</li>
+              <li>+91 36526 32563</li>
+              <li class="flex space-x-4 pt-2">
+                <a href="#" class="hover:text-white transition duration-300"
+                  >...</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-slate-800 mt-8 pt-6 text-center text-slate-500 text-sm"
+        >
+          <p>&copy; 2025 HomeShip. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,157 @@
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #020617; /* slate-950 */
+  color: #e2e8f0; /* slate-200 */
+}
+.glass-nav {
+  background-color: rgba(2, 6, 23, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.hero-bg-modern {
+  background-color: #020617;
+  background-image:
+    radial-gradient(at 10% 20%, hsla(217, 71%, 54%, 0.15) 0px, transparent 50%),
+    radial-gradient(at 80% 20%, hsla(283, 80%, 45%, 0.1) 0px, transparent 50%),
+    radial-gradient(at 50% 90%, hsla(200, 80%, 50%, 0.1) 0px, transparent 50%);
+}
+.gradient-text {
+  background-image: linear-gradient(to right, #38bdf8, #a78bfa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.gradient-button {
+  background-image: linear-gradient(to right, #3b82f6, #8b5cf6);
+  transition: all 0.3s ease;
+}
+.gradient-button:hover {
+  box-shadow: 0 0 20px rgba(96, 165, 250, 0.5);
+  transform: translateY(-2px);
+}
+.service-card {
+  background: linear-gradient(145deg, #1e293b, #0f172a);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* New: remove hover transform, JS will handle it */
+  transition: transform 0.1s linear;
+}
+/* Style for the inner element of the service card for the 3D effect */
+.service-card-inner {
+  transform-style: preserve-3d;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 1.125rem; /* 18px */
+  top: 2.25rem; /* 36px */
+  bottom: -1rem;
+  width: 2px;
+  background-color: #334155; /* slate-700 */
+}
+.timeline-item:last-child::before {
+  display: none;
+}
+/* Custom animation for scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.8s cubic-bezier(0.6, 0.01, 0.05, 0.95),
+    transform 0.8s cubic-bezier(0.6, 0.01, 0.05, 0.95);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.tracking-input-modern:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+  border-color: #3b82f6;
+}
+
+/* Slideshow animation */
+.slideshow-wrapper {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem; /* rounded-xl */
+  overflow: hidden;
+  position: relative; /* Container for absolute positioned images */
+  background-color: #0f172a; /* A dark background for the wrapper */
+}
+.slideshow-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: fadeInOut 12s linear infinite; /* 3s per image * 4 images */
+}
+.slideshow-image:nth-child(2) {
+  animation-delay: 3s;
+}
+.slideshow-image:nth-child(3) {
+  animation-delay: 6s;
+}
+.slideshow-image:nth-child(4) {
+  animation-delay: 9s;
+}
+
+.icon-background {
+  position: relative;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.icon-background::after {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  background: inherit;
+  filter: blur(15px);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.service-card:hover .icon-background {
+  transform: scale(1.1) rotate(5deg);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.service-card:hover .icon-background::after {
+  opacity: 0.6;
+}
+
+.icon-background svg {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card:hover .icon-background svg {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px currentColor);
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  8.33% {
+    opacity: 1;
+  } /* Fade in for 1s */
+  25% {
+    opacity: 1;
+  } /* Hold for 2s */
+  33.33% {
+    opacity: 0;
+  } /* Fade out for 1s */
+  100% {
+    opacity: 0;
+  }
+}

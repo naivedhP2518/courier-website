@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get a Quote - HomeShip</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/quote.css">
+</head>
+<body class="text-slate-300">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="glass-nav sticky w-full top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../index.html" class="text-2xl font-bold text-white flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-2 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                HomeShip
+            </a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="../index.html#home" class="text-slate-300 hover:text-white transition duration-300">Home</a>
+                <a href="../index.html#services" class="text-slate-300 hover:text-white transition duration-300">Services</a>
+                <a href="../index.html#process" class="text-slate-300 hover:text-white transition duration-300">Process</a>
+                <a href="../index.html#about" class="text-slate-300 hover:text-white transition duration-300">About</a>
+                <a href="../index.html#contact" class="text-slate-300 hover:text-white transition duration-300">Contact</a>
+            </div>
+            <a href="quote.html" class="hidden md:block gradient-button text-white px-5 py-2 rounded-full">Get a Quote</a>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="../index.html#home" class="block py-3 px-6 text-sm hover:bg-slate-800">Home</a>
+            <a href="../index.html#services" class="block py-3 px-6 text-sm hover:bg-slate-800">Services</a>
+            <a href="../index.html#process" class="block py-3 px-6 text-sm hover:bg-slate-800">Process</a>
+            <a href="../index.html#about" class="block py-3 px-6 text-sm hover:bg-slate-800">About</a>
+            <a href="../index.html#contact" class="block py-3 px-6 text-sm hover:bg-slate-800">Contact</a>
+             <div class="px-6 py-4">
+                <a href="quote.html" class="w-full text-center block gradient-button text-white px-5 py-2 rounded-full">Get a Quote</a>
+             </div>
+        </div>
+    </header>
+
+    <main class="py-24 min-h-screen hero-bg-modern">
+        <section id="quote-content" class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- Left: Form Section -->
+                <div class="lg:w-3/5 reveal">
+                    <div class="mb-10">
+                        <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-3">
+                            Get an <span class="gradient-text">Instant Quote</span>
+                        </h1>
+                        <p class="text-lg text-slate-400">Precision logistics pricing, calculated in seconds.</p>
+                    </div>
+
+                    <form id="calculation-form" class="space-y-8">
+                        <!-- Route Selection -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-slate-900/40 backdrop-blur-md p-6 rounded-2xl border border-slate-700/50">
+                                <label class="block text-sm font-semibold text-sky-400 uppercase tracking-wider mb-4">Origin</label>
+                                <div class="space-y-4">
+                                    <input type="text" id="from-country" class="form-input w-full bg-slate-800/50 border-slate-700 rounded-xl py-3 px-4 text-white focus:border-sky-500 outline-none transition-all" placeholder="Country">
+                                    <input type="text" id="from-zip" class="form-input w-full bg-slate-800/50 border-slate-700 rounded-xl py-3 px-4 text-white focus:border-sky-500 outline-none transition-all" placeholder="Zip Code">
+                                </div>
+                            </div>
+                            <div class="bg-slate-900/40 backdrop-blur-md p-6 rounded-2xl border border-slate-700/50">
+                                <label class="block text-sm font-semibold text-violet-400 uppercase tracking-wider mb-4">Destination</label>
+                                <div class="space-y-4">
+                                    <input type="text" id="to-country" class="form-input w-full bg-slate-800/50 border-slate-700 rounded-xl py-3 px-4 text-white focus:border-violet-500 outline-none transition-all" placeholder="Country">
+                                    <input type="text" id="to-zip" class="form-input w-full bg-slate-800/50 border-slate-700 rounded-xl py-3 px-4 text-white focus:border-violet-500 outline-none transition-all" placeholder="Zip Code">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Package Metrics -->
+                        <div class="bg-slate-900/40 backdrop-blur-md p-6 rounded-2xl border border-slate-700/50">
+                            <label class="block text-sm font-semibold text-emerald-400 uppercase tracking-wider mb-6">Package Specifications</label>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                <div>
+                                    <label class="text-xs text-slate-500 mb-1 block">Weight (kg)</label>
+                                    <input type="number" id="weight" class="w-full bg-slate-800/50 border border-slate-700 rounded-lg py-2 px-3 text-white" placeholder="0.0" required>
+                                </div>
+                                <div>
+                                    <label class="text-xs text-slate-500 mb-1 block">Length (cm)</label>
+                                    <input type="number" id="length" class="w-full bg-slate-800/50 border border-slate-700 rounded-lg py-2 px-3 text-white" placeholder="0">
+                                </div>
+                                <div>
+                                    <label class="text-xs text-slate-500 mb-1 block">Width (cm)</label>
+                                    <input type="number" id="width" class="w-full bg-slate-800/50 border border-slate-700 rounded-lg py-2 px-3 text-white" placeholder="0">
+                                </div>
+                                <div>
+                                    <label class="text-xs text-slate-500 mb-1 block">Height (cm)</label>
+                                    <input type="number" id="height" class="w-full bg-slate-800/50 border border-slate-700 rounded-lg py-2 px-3 text-white" placeholder="0">
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full gradient-button text-white font-bold py-4 rounded-2xl text-lg shadow-xl hover:shadow-sky-500/20">
+                            Generate Estimate
+                        </button>
+                    </form>
+
+                    <!-- Dynamic Result Display -->
+                    <div id="quote-result" class="mt-8 bg-gradient-to-r from-sky-900/20 to-violet-900/20 border border-sky-500/30 p-8 rounded-2xl text-center hidden reveal">
+                        <p class="text-slate-400 mb-2 uppercase tracking-widest text-xs font-bold">Estimated Investment</p>
+                        <p id="quote-price" class="text-5xl font-black text-white"></p>
+                        <div class="mt-4 flex items-center justify-center gap-2 text-sky-400">
+                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+                             <span class="text-sm">Guaranteed Price Match</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Content/Data Section -->
+                <div class="lg:w-2/5 space-y-8 reveal" style="transition-delay: 200ms;">
+                    <div class="bg-slate-900/60 backdrop-blur-xl border border-slate-800 p-8 rounded-3xl">
+                        <h3 class="text-2xl font-bold text-white mb-6">Network Intelligence</h3>
+                        <div class="space-y-6">
+                            <!-- Stat 1 -->
+                            <div class="flex items-center gap-4">
+                                <div class="bg-sky-500/10 p-3 rounded-xl border border-sky-500/20">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                                </div>
+                                <div>
+                                    <p class="text-2xl font-bold text-white">450ms</p>
+                                    <p class="text-sm text-slate-500">Global Routing Latency</p>
+                                </div>
+                            </div>
+                            <!-- Stat 2 -->
+                            <div class="flex items-center gap-4">
+                                <div class="bg-violet-500/10 p-3 rounded-xl border border-violet-500/20">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                </div>
+                                <div>
+                                    <p class="text-2xl font-bold text-white">$2.4B+</p>
+                                    <p class="text-sm text-slate-500">Asset Value Protected</p>
+                                </div>
+                            </div>
+                            <!-- Stat 3 -->
+                            <div class="flex items-center gap-4">
+                                <div class="bg-emerald-500/10 p-3 rounded-xl border border-emerald-500/20">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                </div>
+                                <div>
+                                    <p class="text-2xl font-bold text-white">195</p>
+                                    <p class="text-sm text-slate-500">Territories Integrated</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 p-8 rounded-3xl">
+                        <h4 class="font-bold text-white mb-4 italic">"HomeShip redefined our supply chain. The automation is peerless."</h4>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-sky-500/20 border border-sky-500/40"></div>
+                            <div>
+                                <p class="text-sm font-bold text-white">Marcus Thorne</p>
+                                <p class="text-xs text-slate-500">CTO, Global Logistics Group</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-slate-950 border-t border-slate-800">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- About -->
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-xl font-bold text-white mb-4">HomeShip</h3>
+                    <p class="text-slate-400 max-w-md">Innovating logistics for a connected world. Your trusted partner for every delivery.</p>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="hover:text-sky-400 transition-colors">About Us</a></li>
+                        <li><a href="careers.html" class="hover:text-sky-400 transition-colors">Careers</a></li>
+                        <li><a href="press.html" class="hover:text-sky-400 transition-colors">Press</a></li>
+                    </ul>
+                </div>
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Contact</h3>
+                    <ul class="space-y-2 text-slate-400">
+                        <li>homeship@swiftship.com</li>
+                        <li>+91 93130 96998</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 mt-8 pt-6 text-center text-slate-500 text-sm">
+                <p>&copy; 2025 HomeShip. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/quote.js"> </script>
+</body>
+</html>
